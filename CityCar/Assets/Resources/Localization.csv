@@ -1,0 +1,11 @@
+﻿Key,Type,Desc,Chinese,Chinese (Taiwan),English
+Back,Text,,返回,返回,Back
+Exit,Text,,退出,退出,Exit
+Next,Text,,下一步,下一步,Next
+Remaind_Text,Text,,文字提示,文字提示,Remaind_Text
+Remaind_Text_Voice,Text,,文字加语音提示,文字加語音提示,Remaind_Text_Voice
+Remaind_Voice,Text,,语音提示,語音提示,Remaind_Voice
+Start,Text,,开始,開始,Start
+USERID,Text,,使用者名称,使用者名稱,USERID
+Destination1,Text,,目的地1,目的地1,Destination1
+Destination2,Text,,目的地2,目的地2,Destination2

@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: c27b1218b42673f43a6e5f9e795fe213
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box04
+    100002: Box108
+    100004: Box110
+    100006: Box115
+    100008: Box122
+    100010: Box129
+    100012: Box148
+    100014: Box178
+    100016: Box179
+    100018: Box180
+    100020: Box181
+    100022: Box182
+    100024: Box186
+    100026: Box187
+    100028: Box188
+    100030: Box189
+    100032: Box190
+    100034: Box191
+    100036: Box192
+    100038: Box193
+    100040: Box194
+    100042: Box195
+    100044: Box196
+    100046: Box197
+    100048: Box198
+    100050: Box199
+    100052: Box200
+    100054: Box201
+    100056: Cylinder001
+    100058: Cylinder003
+    100060: Cylinder004
+    100062: Cylinder005
+    100064: Group001
+    100066: Group002
+    100068: Group003
+    100070: Group004
+    100072: Group005
+    100074: Group006
+    100076: Group007
+    100078: Group008
+    100080: Group009
+    100082: Group010
+    100084: Group011
+    100086: Loft001
+    100088: //RootNode
+    100090: Object058
+    100092: Object060
+    100094: Object063
+    100096: Object064
+    100098: Object065
+    100100: Object066
+    100102: Object067
+    100104: Object068
+    100106: Object069
+    100108: Object070
+    100110: Object071
+    100112: Object072
+    100114: Object073
+    100116: Object074
+    100118: Object075
+    100120: Object076
+    100122: Object077
+    100124: Object078
+    100126: Object079
+    100128: Object080
+    100130: Object081
+    100132: Object082
+    100134: Object083
+    100136: Object084
+    100138: Object086
+    100140: Object087
+    100142: Plane001
+    100144: Text004
+    100146: Text005
+    100148: Text006
+    100150: Text007
+    100152: Text008
+    100154: Text02
+    100156: Text03
+    100158: Group012
+    100160: Object088
+    400000: Box04
+    400002: Box108
+    400004: Box110
+    400006: Box115
+    400008: Box122
+    400010: Box129
+    400012: Box148
+    400014: Box178
+    400016: Box179
+    400018: Box180
+    400020: Box181
+    400022: Box182
+    400024: Box186
+    400026: Box187
+    400028: Box188
+    400030: Box189
+    400032: Box190
+    400034: Box191
+    400036: Box192
+    400038: Box193
+    400040: Box194
+    400042: Box195
+    400044: Box196
+    400046: Box197
+    400048: Box198
+    400050: Box199
+    400052: Box200
+    400054: Box201
+    400056: Cylinder001
+    400058: Cylinder003
+    400060: Cylinder004
+    400062: Cylinder005
+    400064: Group001
+    400066: Group002
+    400068: Group003
+    400070: Group004
+    400072: Group005
+    400074: Group006
+    400076: Group007
+    400078: Group008
+    400080: Group009
+    400082: Group010
+    400084: Group011
+    400086: Loft001
+    400088: //RootNode
+    400090: Object058
+    400092: Object060
+    400094: Object063
+    400096: Object064
+    400098: Object065
+    400100: Object066
+    400102: Object067
+    400104: Object068
+    400106: Object069
+    400108: Object070
+    400110: Object071
+    400112: Object072
+    400114: Object073
+    400116: Object074
+    400118: Object075
+    400120: Object076
+    400122: Object077
+    400124: Object078
+    400126: Object079
+    400128: Object080
+    400130: Object081
+    400132: Object082
+    400134: Object083
+    400136: Object084
+    400138: Object086
+    400140: Object087
+    400142: Plane001
+    400144: Text004
+    400146: Text005
+    400148: Text006
+    400150: Text007
+    400152: Text008
+    400154: Text02
+    400156: Text03
+    400158: Group012
+    400160: Object088
+    2100000: 'Material #104'
+    2100002: 'Material #102'
+    2100004: 'Material #61'
+    2100006: 'Material #95'
+    2100008: 'Material #93'
+    2100010: 'Material #96'
+    2100012: 08 - Default
+    2100014: 'Material #68'
+    2100016: 07 - Default
+    2100018: 'Material #69'
+    2100020: 'Material #80'
+    2100022: 'Material #12'
+    2100024: 'Material #62'
+    2100026: 'Material #77'
+    2100028: 'Material #31'
+    2100030: 'Material #63'
+    2100032: 'Material #60'
+    2100034: 'Material #65'
+    2100036: 'Material #66'
+    2100038: 'Material #74'
+    2100040: 'Material #75'
+    2100042: 'Material #76'
+    2100044: 'Material #78'
+    2100046: 'Material #73'
+    2100048: 'Material #79'
+    2100050: 'Material #4'
+    2100052: 'Material #72'
+    2100054: 'Material #6900'
+    2300000: Box108
+    2300002: Box110
+    2300004: Box115
+    2300006: Box129
+    2300008: Box148
+    2300010: Box178
+    2300012: Box180
+    2300014: Box181
+    2300016: Box182
+    2300018: Box186
+    2300020: Box187
+    2300022: Box188
+    2300024: Box189
+    2300026: Box190
+    2300028: Box191
+    2300030: Box192
+    2300032: Box193
+    2300034: Box194
+    2300036: Box195
+    2300038: Box196
+    2300040: Box197
+    2300042: Box198
+    2300044: Box199
+    2300046: Box200
+    2300048: Box201
+    2300050: Cylinder001
+    2300052: Cylinder003
+    2300054: Cylinder004
+    2300056: Cylinder005
+    2300058: Loft001
+    2300060: Object058
+    2300062: Object060
+    2300064: Object063
+    2300066: Object064
+    2300068: Object066
+    2300070: Object067
+    2300072: Object068
+    2300074: Object069
+    2300076: Object070
+    2300078: Object071
+    2300080: Object072
+    2300082: Object073
+    2300084: Object074
+    2300086: Object075
+    2300088: Object076
+    2300090: Object077
+    2300092: Object078
+    2300094: Object079
+    2300096: Object080
+    2300098: Object081
+    2300100: Object082
+    2300102: Object083
+    2300104: Object084
+    2300106: Object086
+    2300108: Object087
+    2300110: Plane001
+    2300112: Text006
+    2300114: Text007
+    2300116: Text008
+    2300118: Object088
+    3300000: Box108
+    3300002: Box110
+    3300004: Box115
+    3300006: Box129
+    3300008: Box148
+    3300010: Box178
+    3300012: Box180
+    3300014: Box181
+    3300016: Box182
+    3300018: Box186
+    3300020: Box187
+    3300022: Box188
+    3300024: Box189
+    3300026: Box190
+    3300028: Box191
+    3300030: Box192
+    3300032: Box193
+    3300034: Box194
+    3300036: Box195
+    3300038: Box196
+    3300040: Box197
+    3300042: Box198
+    3300044: Box199
+    3300046: Box200
+    3300048: Box201
+    3300050: Cylinder001
+    3300052: Cylinder003
+    3300054: Cylinder004
+    3300056: Cylinder005
+    3300058: Loft001
+    3300060: Object058
+    3300062: Object060
+    3300064: Object063
+    3300066: Object064
+    3300068: Object066
+    3300070: Object067
+    3300072: Object068
+    3300074: Object069
+    3300076: Object070
+    3300078: Object071
+    3300080: Object072
+    3300082: Object073
+    3300084: Object074
+    3300086: Object075
+    3300088: Object076
+    3300090: Object077
+    3300092: Object078
+    3300094: Object079
+    3300096: Object080
+    3300098: Object081
+    3300100: Object082
+    3300102: Object083
+    3300104: Object084
+    3300106: Object086
+    3300108: Object087
+    3300110: Plane001
+    3300112: Text006
+    3300114: Text007
+    3300116: Text008
+    3300118: Object088
+    4300000: Plane001
+    4300002: Box129
+    4300004: Object060
+    4300006: Cylinder001
+    4300008: Cylinder003
+    4300010: Box200
+    4300012: Loft001
+    4300014: Text008
+    4300016: Cylinder005
+    4300018: Box201
+    4300020: Object058
+    4300022: Text006
+    4300024: Object083
+    4300026: Object081
+    4300028: Object080
+    4300030: Object078
+    4300032: Box182
+    4300034: Object063
+    4300036: Object064
+    4300038: Box181
+    4300040: Text007
+    4300042: Box178
+    4300044: Box186
+    4300046: Box199
+    4300048: Box180
+    4300050: Object079
+    4300052: Box110
+    4300054: Box108
+    4300056: Object082
+    4300058: Box115
+    4300060: Object084
+    4300062: Box148
+    4300064: Object086
+    4300066: Cylinder004
+    4300068: Box191
+    4300070: Object070
+    4300072: Object071
+    4300074: Box192
+    4300076: Object066
+    4300078: Box187
+    4300080: Box188
+    4300082: Object067
+    4300084: Object068
+    4300086: Box189
+    4300088: Box190
+    4300090: Object069
+    4300092: Box193
+    4300094: Object072
+    4300096: Object073
+    4300098: Box194
+    4300100: Object074
+    4300102: Box195
+    4300104: Box196
+    4300106: Object075
+    4300108: Object076
+    4300110: Box197
+    4300112: Box198
+    4300114: Object077
+    4300116: Object087
+    4300118: Object088
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

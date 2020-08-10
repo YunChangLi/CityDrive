@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: Back
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u8FD4\u56DE"
+      - "\u8FD4\u56DE"
+      - Back
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u9000\u51FA"
+      - "\u9000\u51FA"
+      - Exit
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Next
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u4E0B\u4E00\u6B65"
+      - "\u4E0B\u4E00\u6B65"
+      - Next
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Remaind_Text
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u6587\u5B57\u63D0\u793A"
+      - "\u6587\u5B57\u63D0\u793A"
+      - Remaind_Text
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Remaind_Text_Voice
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u6587\u5B57\u52A0\u8BED\u97F3\u63D0\u793A"
+      - "\u6587\u5B57\u52A0\u8A9E\u97F3\u63D0\u793A"
+      - Remaind_Text_Voice
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Remaind_Voice
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u8BED\u97F3\u63D0\u793A"
+      - "\u8A9E\u97F3\u63D0\u793A"
+      - Remaind_Voice
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Start
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u5F00\u59CB"
+      - "\u958B\u59CB"
+      - Start
+      Flags: 000000
+      Languages_Touch: []
+    - Term: USERID
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u4F7F\u7528\u8005\u540D\u79F0"
+      - "\u4F7F\u7528\u8005\u540D\u7A31"
+      - USERID
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Destination1
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u76EE\u7684\u57301"
+      - "\u76EE\u7684\u57301"
+      - Destination1
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Destination2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u76EE\u7684\u57302"
+      - "\u76EE\u7684\u57302"
+      - Destination2
+      Flags: 000000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: Chinese
+      Code: zh
+      Flags: 0
+    - Name: Chinese (Taiwan)
+      Code: zh-TW
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 1
+    Google_WebServiceURL: 
+    Google_SpreadsheetKey: 
+    Google_SpreadsheetName: 
+    Google_LastUpdatedVersion: 
+    Google_Password: change_this
+    GoogleUpdateFrequency: 3
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateDelay: 5
+    Assets: []
+    Spreadsheet_LocalFileName: Resources/Localization.csv
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
