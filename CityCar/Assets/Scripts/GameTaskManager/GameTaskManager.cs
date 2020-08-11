@@ -42,7 +42,7 @@ public class GameTaskManager : MonoSingleton<GameTaskManager>, IGameManager
     {
         if (GameTaskManager.Instance.GameTaskConfig.DriveType == 0)
         {
-            return Input.GetKeyDown(KeyCode.A);
+            return Input.GetKeyDown(KeyCode.Return);
         }
         else if (GameTaskManager.Instance.GameTaskConfig.DriveType == 1)
         {

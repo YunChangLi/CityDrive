@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public enum DriveLevel
 {
-   Null,
    Level_1,
    Level_2,
    Level_3

@@ -73,7 +73,14 @@ public class PlayerColliderObject : MonoBehaviour
         Startquaternion = this.transform.rotation;
         rCC = this.gameObject.GetComponent<RCC_CarControllerV3>();
         Rigidbody = this.gameObject.GetComponent<Rigidbody>();
+
     }
+
+    private void Start()
+    {
+        MainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+    }
+
     /// <summary>
     /// 更新
     /// </summary>
@@ -211,7 +218,7 @@ public class PlayerColliderObject : MonoBehaviour
         AutoSpeech.CheckoutTips("您已偏航");
 
         isOver = true;
-        rCC.enabled = false;
+        //rCC.enabled = false;
         
         yield return new WaitForSeconds(2);
         
@@ -220,6 +227,7 @@ public class PlayerColliderObject : MonoBehaviour
         MainCamera.cullingMask = (1 << 1);
         Rigidbody.isKinematic = true; //速度归零
         this.gameObject.transform.position = StartPos;
+        Debug.Log(StartPos);
         this.gameObject.transform.rotation = Startquaternion;
         //相机正常
         yield return new WaitForSeconds(2);
@@ -233,8 +241,8 @@ public class PlayerColliderObject : MonoBehaviour
 
 
         //TODO 错误路线计数
-        rCC.enabled = true;
-        rCC.speed = 0;
+        //rCC.enabled = true;
+        //rCC.speed = 0;
         isOver = false;
         _isPublic = true;
         AutoSpeech.CheckoutTips("重置完毕");
@@ -245,7 +253,7 @@ public class PlayerColliderObject : MonoBehaviour
         yield return new WaitUntil(Input);
 
         GameUIManager.Instance.VRSceneUI.VRSceneText.text = "";
-        rCC.speed = GameTaskManager.Instance.GameTaskConfig.Speed;
+        //rCC.speed = GameTaskManager.Instance.GameTaskConfig.Speed;
         Rigidbody.isKinematic = false;
     }
     /// <summary>
@@ -260,7 +268,7 @@ public class PlayerColliderObject : MonoBehaviour
         GamePlayerManager.Instance.Timer = _timer;
         GameUIManager.Instance.VRSceneUI.UiResult();
         float i = 0.0f;
-        rCC.IsStop = true;
+        //rCC.IsStop = true;
         yield return new WaitForSeconds(2);
         GamePlayerManager.Instance.PlayerGameDataOut.ResultDataOut();
     }

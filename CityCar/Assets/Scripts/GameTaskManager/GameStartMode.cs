@@ -25,8 +25,8 @@ public class GameStartMode : MonoBehaviour,IPlayerStartTest
         GameUIManager.Instance.VRSceneUI.VRSceneText.text = "";
         GameUIManager.Instance.VRSceneUI.autoSpeech.StopTip();
         //开启汽车组件
-        GamePlayerManager.Instance.PlayerColliderObject.rCC.enabled = true;
-        GamePlayerManager.Instance.PlayerColliderObject.rCC.speed = GameTaskManager.Instance.GameTaskConfig.Speed;
+        //GamePlayerManager.Instance.PlayerColliderObject.rCC.enabled = true;
+        //GamePlayerManager.Instance.PlayerColliderObject.rCC.speed = GameTaskManager.Instance.GameTaskConfig.Speed;
 
         //开启汽车驾驶功能
         GamePlayerManager.Instance.PlayerStart();

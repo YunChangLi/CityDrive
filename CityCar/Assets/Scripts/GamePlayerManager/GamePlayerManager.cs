@@ -44,7 +44,7 @@ public class GamePlayerManager : MonoSingleton<GamePlayerManager>, IGameManager
     public void PlayerInit()
     {
         //持有脚本
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("MyVZPlayer");
         PathFindTest = GameObject.Find("PathFind").GetComponent<PathFindTest>();
         MapCreater = GameObject.Find("MapCreater").GetComponent<MapCreater>();
         PlayerColliderObject = Player.GetComponent<PlayerColliderObject>();

@@ -30,6 +30,9 @@ public class RoutePage : BasePage , ILanguageTranslate
         NextButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.HintPage)));
         BackButton.onClick.AddListener(()=>GoPage(GameUIManager.Instance.MainUi.UiPages.LoginPage));
 
+        GameUIManager.Instance.MainUi.RouteNode = GameUIManager.Instance.MainUi.RouteDatas[0];
+        GameUIManager.Instance.MainUi.UI_DriveLevel = (DriveLevel)int.Parse(GameUIManager.Instance.MainUi.RouteDatas[0].Difficult);
+
     }
 
     /// <summary>
