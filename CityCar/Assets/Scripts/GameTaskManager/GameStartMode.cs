@@ -12,6 +12,7 @@ public class GameStartMode : MonoBehaviour,IPlayerStartTest
 
     public IEnumerator StartGameLogic(Func<bool> Input)
     {
+        yield return new WaitUntil(() => FindObjectOfType<VZPlayer>().IsFadeOut);
         //关闭汽车组件
         //GamePlayerManager.Instance.PlayerColliderObject.rCC.enabled = false;
         
@@ -30,6 +31,7 @@ public class GameStartMode : MonoBehaviour,IPlayerStartTest
 
         //开启汽车驾驶功能
         GamePlayerManager.Instance.PlayerStart();
+
     }
 
     

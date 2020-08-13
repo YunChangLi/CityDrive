@@ -65,8 +65,11 @@ public class GamePlayerManager : MonoSingleton<GamePlayerManager>, IGameManager
         //告诉玩家身上的碰撞脚本为True；
         PlayerColliderObject.GameSceneInitOver = true;
         PlayerGameDataOut.LoopDataOut();
+
+        // 讓腳踏車可以開始移動
+        FindObjectOfType<VZController>().IsStart = true;
     }
- 
+
     /// <summary>
     /// 解析路线
     /// </summary>

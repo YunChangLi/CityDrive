@@ -35,6 +35,9 @@ public class VZController : MonoBehaviour
    public const float kMilesToKm = 1.60934f;
    public const float kSpinsToMiles = kMetersPerRev / 1000 / kMilesToKm;
 
+   // 是否閱讀完指導語
+   public bool IsStart = false;
+
    public class Button
    {
       public bool Down { get; private set; }
@@ -890,7 +893,7 @@ public class VZController : MonoBehaviour
 
             if (Time.realtimeSinceStartup > mIgnoreTime)
             {
-               InputSpeed = mBikeState.Speed;
+               InputSpeed = IsStart ? mBikeState.Speed : 0;
 
                if (Mathf.Abs(InputSpeed) > 1 && (IsBikeSensor() || IsLifeCycle()))
                {

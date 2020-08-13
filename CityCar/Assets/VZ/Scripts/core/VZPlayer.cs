@@ -58,6 +58,11 @@ public class VZPlayer : MonoBehaviour
    public static VZPlayer Instance { get; private set; }
    public static VZController Controller { get; private set; }
 
+   // 是否開始顯示指導語UI 
+   public bool IsFadeOut = false;
+   // Button跟眼動Canvas
+   public GameObject CanvasObject;
+
 #if VZ_ARCADE || VZ_STREETVIEW
    public static VZServer Server { get; private set; }
 #endif
@@ -627,6 +632,8 @@ public class VZPlayer : MonoBehaviour
       // Deactivate and reset alpha
       Controller.TransitionCanvas().SetActive(false);
       group.alpha = 1.0f;
+      IsFadeOut = true;
+      CanvasObject.SetActive(true);
    }
 
    //***********************************************************************

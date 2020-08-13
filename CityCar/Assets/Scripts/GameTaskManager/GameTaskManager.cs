@@ -42,7 +42,7 @@ public class GameTaskManager : MonoSingleton<GameTaskManager>, IGameManager
     {
         if (GameTaskManager.Instance.GameTaskConfig.DriveType == 0)
         {
-            return Input.GetKeyDown(KeyCode.Return);
+            return FindObjectOfType<VZController>().RightButton.Released();
         }
         else if (GameTaskManager.Instance.GameTaskConfig.DriveType == 1)
         {
