@@ -36,6 +36,14 @@ public enum DriveEnd
     Jiayouzhan,
     Youju
 }
+
+public enum MathDifficulty
+{
+    Easy,
+    Normal,
+    Hard
+}
+
 public class GameFlowData
 {
     public DriveEnd DriveEnd { get; set; }
@@ -50,7 +58,13 @@ public class GameFlowData
 
     public LineData.Data RouteNode { get; set; }
 
-    public GameFlowData(DriveEnd driveEnd, DriveLevel driveLevel, RemindType remindType, Language language, string ID, LineData.Data data)
+    public float Frequency { get; set; }
+
+    public float TimeLimit { get; set; }
+
+    public MathDifficulty Difficulty { get; set; }
+
+    public GameFlowData(DriveEnd driveEnd, DriveLevel driveLevel, RemindType remindType, Language language, string ID, LineData.Data data, float frequency, float timeLimit, MathDifficulty difficulty)
     {
         DriveLevel = driveLevel;
         DriveEnd = driveEnd;
@@ -58,5 +72,8 @@ public class GameFlowData
         Language = language;
         UserID = ID;
         RouteNode = data;
+        Frequency = frequency;
+        TimeLimit = timeLimit;
+        Difficulty = difficulty;
     }
 }

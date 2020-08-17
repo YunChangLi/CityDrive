@@ -27,7 +27,7 @@ public class RoutePage : BasePage , ILanguageTranslate
 
         DropDownAddOption(_endDropdownRectTransform, GameUIManager.Instance.MainUi.RouteDatas);
 
-        NextButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.HintPage)));
+        NextButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.MathSettingPage)));
         BackButton.onClick.AddListener(()=>GoPage(GameUIManager.Instance.MainUi.UiPages.LoginPage));
 
         GameUIManager.Instance.MainUi.RouteNode = GameUIManager.Instance.MainUi.RouteDatas[0];

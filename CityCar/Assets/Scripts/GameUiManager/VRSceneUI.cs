@@ -11,6 +11,11 @@ public class VRSceneUI : MonoBehaviour
     public AutoSpeech autoSpeech;
 
     /// <summary>
+    /// 數學運算式UI
+    /// </summary>
+    public GameObject MathUI;
+
+    /// <summary>
     /// 测试Ui物体
     /// </summary>
     public GameObject ResultUI;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class GameStartMode : MonoBehaviour,IPlayerStartTest
@@ -32,6 +33,16 @@ public class GameStartMode : MonoBehaviour,IPlayerStartTest
         //开启汽车驾驶功能
         GamePlayerManager.Instance.PlayerStart();
 
+        GameObject mathUI = GameUIManager.Instance.VRSceneUI.MathUI;
+        while (true)
+        {
+            yield return new WaitForSeconds(GameDataManager.Instance.FlowData.Frequency);
+            string exp = mathUI.GetComponent<ExpressionCreator>().GetExpression();
+            mathUI.SetActive(true);
+            mathUI.GetComponentInChildren<Text>().text = exp;
+            yield return new WaitForSeconds(GameDataManager.Instance.FlowData.TimeLimit);
+            mathUI.SetActive(false);
+        }
     }
 
     

@@ -9,5 +9,6 @@ public class UIPages
     public BasePage
         LoginPage,
         RoutePage,
-        HintPage;
+        HintPage,
+        MathSettingPage;
 }

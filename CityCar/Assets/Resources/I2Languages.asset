@@ -107,6 +107,24 @@ MonoBehaviour:
       - Destination2
       Flags: 000000
       Languages_Touch: []
+    - Term: Frequency
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u9898\u76EE\u51FA\u73B0\u9891\u7387"
+      - "\u984C\u76EE\u51FA\u73FE\u983B\u7387"
+      - Frequency
+      Flags: 000000
+      Languages_Touch: []
+    - Term: TimeLimit
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u4F5C\u7B54\u65F6\u95F4"
+      - "\u4F5C\u7B54\u6642\u9593"
+      - TimeLimit
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
