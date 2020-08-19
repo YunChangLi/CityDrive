@@ -79,6 +79,7 @@ public class PlayerColliderObject : MonoBehaviour
     private void Start()
     {
         MainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        GetComponentInChildren<Canvas>().worldCamera = MainCamera;
     }
 
     /// <summary>
