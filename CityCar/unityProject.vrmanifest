@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.citycar.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Projects\\CityDrive\\CityCar\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "CityCar [Testing]"
+        }
+      }
+    }
+  ]
+}

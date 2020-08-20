@@ -1067,6 +1067,7 @@ public class VZController : MonoBehaviour
       localAngles.y += mCameraOffset.localEulerAngles.y;
       Head.localEulerAngles = localAngles;
 
+
       // Update button data
       LeftButton.Update();
       RightButton.Update();
@@ -1225,7 +1226,8 @@ public class VZController : MonoBehaviour
       mNeck = transform.Find("Neck");
       mCameraOffset = mNeck.Find("CameraOffset");
       mCamera = mCameraOffset.Find("[CameraRig]").Find("Camera");
-      Head = mNeck.Find("Head");
+        mCamera.transform.Rotate(new Vector3(0, 90, 0));
+        Head = mNeck.Find("Head");
 
       // Setup transition canvas
       mTransitionCanvas = mNeck.Find("Head/TransitionCanvas").gameObject;
@@ -1392,7 +1394,7 @@ public class VZController : MonoBehaviour
    float mMovedPeriod = 3.1f; // little more than multiple of mMovedSample
    bool mInitializeHeadset = true;
    int mDifficulty = 5;
-   Transform mCameraOffset;
+   public Transform mCameraOffset;
    Transform mCamera;
    bool mRecentered = false;
    float mIgnoreTime = 0;

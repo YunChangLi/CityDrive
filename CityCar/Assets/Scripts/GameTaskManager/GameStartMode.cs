@@ -8,6 +8,8 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 {
 
     private float startTime;
+    private List<string> exp = new List<string>();
+
 
     public void EndLogic()
     {
@@ -46,25 +48,42 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
         {
             yield return new WaitForSeconds(GameDataManager.Instance.FlowData.Frequency);
             startTime = Time.time;
-            string exp = mathUI.GetComponent<ExpressionCreator>().GetExpression();
+
+            exp = mathUI.GetComponent<ExpressionCreator>().CreateExpression();
+            string showExp = "";
+            foreach (string str in exp)
+            {
+                showExp += str;
+            }
+
+            int correctAnswer = mathUI.GetComponent<ExpressionCreator>().GetAnswer(exp);
+            int wrongAnswer = mathUI.GetComponent<ExpressionCreator>().GetWrongAns(correctAnswer);
+            int correct = UnityEngine.Random.Range(0, 2);
             mathUI.SetActive(true);
-            mathUI.GetComponentInChildren<Text>().text = exp;
-            yield return new WaitUntil(() => Time.time - startTime > GameDataManager.Instance.FlowData.TimeLimit || ChooseAnswer());
+            if (correct == 0)
+            {
+                mathUI.GetComponentInChildren<Text>().text = showExp + " = " + wrongAnswer.ToString();
+            }
+            else
+            {
+                mathUI.GetComponentInChildren<Text>().text = showExp + " = " + correctAnswer.ToString();
+            }
+            yield return new WaitUntil(() => Time.time - startTime > GameDataManager.Instance.FlowData.TimeLimit || ChooseAnswer(correct));
             //yield return new WaitForSeconds(GameDataManager.Instance.FlowData.TimeLimit);
             mathUI.SetActive(false);
         }
     }
 
-    public bool ChooseAnswer()
+    public bool ChooseAnswer(int correct)
     {
         if (FindObjectOfType<VZController>().RightButton.Released())
         {
-            Debug.Log("A");
+            Debug.Log(correct == 1? "Correct" : "Wrong");
             return true;
         }
         else if (FindObjectOfType<VZController>().LeftButton.Released())
         {
-            Debug.Log("B");
+            Debug.Log(correct == 1 ? "Wrong" : "Correct");
             return true;
         }
         return false;

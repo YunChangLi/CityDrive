@@ -246,6 +246,7 @@ public class VZPlayer : MonoBehaviour
 
    protected virtual void Start()
    {
+        
       mInput.OnMenu = false;
 
       // Transition canvas
@@ -728,7 +729,7 @@ public class VZPlayer : MonoBehaviour
    float mBodyRot = 0;
    Vector3 mRaycastOffset = new Vector3(0, 1, 0);
    string mState = "";
-   Rigidbody mRigidbody;
+   protected Rigidbody mRigidbody;
 
    static bool sFirstTime = true;
 }

@@ -8,18 +8,19 @@ public class ExpressionCreator : MonoBehaviour
 
     private List<string> expression;
 
-    public string GetExpression()
-    {
-        expression = CreateExpression();
-        string s = "";
-        foreach(string str in expression)
+
+    public int GetWrongAns(int correctAns) {
+
+        int deltaV  = 0 ;
+        do
         {
-            s += str;
-        }
+            deltaV = Random.Range(-10, 11);
 
-        return s + "=" + GetAnswer(expression);
+        } while (deltaV == 0);
+        
+        return correctAns + deltaV;
+    
     }
-
     public int GetAnswer(List<string> exp)
     {
         Stack<int> numStack = new Stack<int>();
