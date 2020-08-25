@@ -23,7 +23,9 @@ public class VRSceneUI : MonoBehaviour
     public Text ResultTimer;
     public Text TrafficlightCount;
     public Text WroingCount;
-    
+
+    public GameObject CorrectImage;
+    public GameObject WrongImage;
 
     public void SceneUiInit(/*DriveEnd InitdriveEnd, /*DriveLevel InitdriveLevel,*/ RemindType InitremindType)
     {
@@ -36,8 +38,8 @@ public class VRSceneUI : MonoBehaviour
     /// <param name="driveEnd"></param>
     /// <param name="driveLevel"></param>
     public void TextShow(/*DriveEnd driveEnd,DriveLevel driveLevel,*/RemindType _remindType)
-    {
-        StringShowType(_remindType, GamePlayerManager.Instance.FlowData.RouteNode.LineText);
+    { 
+        StringShowType(_remindType, GameExtension.GetCurrentCultureValue(GamePlayerManager.Instance.FlowData.RouteNode.LineText));
     }
 
     /// <summary>

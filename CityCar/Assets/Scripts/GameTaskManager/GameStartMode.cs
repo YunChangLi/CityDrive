@@ -47,20 +47,22 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
     public IEnumerator Math()
     {
         GameObject mathUI = GameUIManager.Instance.VRSceneUI.MathUI;
+        ExpressionCreator creator = mathUI.GetComponent<ExpressionCreator>();
+        creator.OperatorNumber = (int)GameDataManager.Instance.FlowData.Difficulty;
         while (!FindObjectOfType<PlayerColliderObject>().GetIsOver())
         {
             yield return new WaitForSeconds(GameDataManager.Instance.FlowData.Frequency);
             startTime = Time.time;
 
-            exp = mathUI.GetComponent<ExpressionCreator>().CreateExpression();
+            exp = creator.CreateExpression();
             string showExp = "";
             foreach (string str in exp)
             {
                 showExp += str;
             }
 
-            int correctAnswer = mathUI.GetComponent<ExpressionCreator>().GetAnswer(exp);
-            int wrongAnswer = mathUI.GetComponent<ExpressionCreator>().GetWrongAns(correctAnswer);
+            int correctAnswer = creator.GetAnswer(exp);
+            int wrongAnswer = creator.GetWrongAns(correctAnswer);
             int correct = UnityEngine.Random.Range(0, 2);
             mathUI.SetActive(true);
             if (correct == 0)
@@ -81,14 +83,47 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
     {
         if (FindObjectOfType<VZController>().RightButton.Pressed())
         {
-            Debug.Log(correct == 1? "Correct" : "Wrong");
+            if(correct == 1)
+            {
+                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+            }
+            else
+            {
+                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+            }
             return true;
         }
         else if (FindObjectOfType<VZController>().LeftButton.Pressed())
         {
-            Debug.Log(correct == 1 ? "Wrong" : "Correct");
+            if (correct == 1)
+            {
+                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+            }
+            else
+            {
+                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+            }
             return true;
         }
         return false;
+    }
+
+    protected virtual IEnumerator FadeDown(float fadeTime, GameObject image)
+    {
+        image.SetActive(true);
+        // Fade alpha down to zero
+        float time = 0;
+
+        while (time < fadeTime)
+        {
+            time += VZTime.deltaTime > 0f ? VZTime.deltaTime : (1f / 60f);
+            float alpha = Mathf.SmoothStep(1f, 0f, time / fadeTime);
+            image.GetComponent<Image>().color = new Color(1, 1, 1, alpha);
+            yield return null;
+        }
+
+        // Deactivate and reset alpha
+        image.SetActive(false);
+        image.GetComponent<Image>().color = Color.white;
     }
 }
