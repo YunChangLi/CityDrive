@@ -11,6 +11,8 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
     private List<string> exp = new List<string>();
     public bool isStart = false;
 
+    private IEnumerator MathCoroutine;
+
 
     public void EndLogic()
     {
@@ -41,7 +43,19 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
         //开启汽车驾驶功能
         GamePlayerManager.Instance.PlayerStart();
 
-        yield return Math();
+        StartMath();
+    }
+
+    public void StartMath()
+    {
+        MathCoroutine = Math();
+        StartCoroutine(MathCoroutine);
+    }
+
+    public void StopMath()
+    {
+        GameUIManager.Instance.VRSceneUI.MathUI.SetActive(false);
+        StopCoroutine(MathCoroutine);
     }
 
     public IEnumerator Math()
@@ -73,9 +87,15 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
             {
                 mathUI.GetComponentInChildren<Text>().text = showExp + " = " + correctAnswer.ToString();
             }
-            yield return new WaitUntil(() => Time.time - startTime > GameDataManager.Instance.FlowData.TimeLimit || ChooseAnswer(correct));
+            yield return new WaitUntil(() => Time.time - startTime > GameDataManager.Instance.FlowData.TimeLimit || ChooseAnswer(correct) || FindObjectOfType<PlayerColliderObject>().GetIsOver());
+            GamePlayerManager.Instance.MathCount++;
             //yield return new WaitForSeconds(GameDataManager.Instance.FlowData.TimeLimit);
             mathUI.SetActive(false);
+        }
+
+        if(startTime + GameDataManager.Instance.FlowData.TimeLimit > Time.time)
+        {
+            GamePlayerManager.Instance.MathCount--;
         }
     }
 
@@ -85,6 +105,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
         {
             if(correct == 1)
             {
+                GamePlayerManager.Instance.MathCorrectCount++;
                 StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
             }
             else
@@ -101,6 +122,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
             }
             else
             {
+                GamePlayerManager.Instance.MathCorrectCount++;
                 StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
             }
             return true;

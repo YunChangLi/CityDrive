@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExpressionCreator : MonoBehaviour
 {
-    public int OperatorNumber;  // 運算元的數量
+    public int OperatorNumber { get; set; }  // 運算元的數量
 
     private List<string> expression;
 

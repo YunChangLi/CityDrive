@@ -217,7 +217,7 @@ public class PlayerColliderObject : MonoBehaviour
     public IEnumerator ResetTransform(Func<bool> Input)
     {
         AutoSpeech.CheckoutTips("您已偏航");
-
+        GameTaskManager.Instance.GetComponent<GameStartMode>().StopMath();
         isOver = true;
         //rCC.enabled = false;
         
@@ -258,6 +258,8 @@ public class PlayerColliderObject : MonoBehaviour
         GameUIManager.Instance.VRSceneUI.VRSceneText.text = "";
         //rCC.speed = GameTaskManager.Instance.GameTaskConfig.Speed;
         Rigidbody.isKinematic = false;
+
+        GameTaskManager.Instance.GetComponent<GameStartMode>().StartMath();
     }
     /// <summary>
     /// 游戏结束

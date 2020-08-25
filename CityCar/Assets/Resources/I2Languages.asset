@@ -216,6 +216,87 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Easy
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u7B80\u5355"
+      - "\u7C21\u55AE"
+      - Easy
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Normal
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u666E\u901A"
+      - "\u666E\u901A"
+      - Normal
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Hard
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u56F0\u96BE"
+      - "\u56F0\u96E3"
+      - Hard
+      Flags: 000000
+      Languages_Touch: []
+    - Term: ResultTime
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u6D4B\u8BD5\u7528\u65F6:"
+      - "\u6E2C\u8A66\u7528\u6642\uFF1A"
+      - 'Spend Time:'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: TrafficlightCount
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u95EF\u7EA2\u706F\u6B21\u6570\uFF1A"
+      - "\u95D6\u7D05\u71C8\u6B21\u6578\uFF1A"
+      - 'Red light time:'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: WrongCount
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u9519\u8BEF\u8DEF\u7EBF\u6B21\u6570\uFF1A"
+      - "\u932F\u8AA4\u8DEF\u7DDA\u6B21\u6578\uFF1A"
+      - 'Wrong count:'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: MathCount
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u603B\u6570\u5B66\u9898\u6570\uFF1A"
+      - "\u7E3D\u6578\u5B78\u984C\u6578\uFF1A"
+      - 'Math count:'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: MathCorrectCount
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u7B54\u5BF9\u6570\u5B66\u9898\u6570\uFF1A"
+      - "\u7B54\u5C0D\u6578\u5B78\u984C\u6578\uFF1A"
+      - 'Math correct count:'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Second
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u79D2"
+      - "\u79D2"
+      - Second
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

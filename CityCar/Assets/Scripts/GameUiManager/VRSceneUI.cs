@@ -22,7 +22,9 @@ public class VRSceneUI : MonoBehaviour
 
     public Text ResultTimer;
     public Text TrafficlightCount;
-    public Text WroingCount;
+    public Text WrongCount;
+    public Text MathCount;
+    public Text MathCorrectCount;
 
     public GameObject CorrectImage;
     public GameObject WrongImage;
@@ -72,9 +74,11 @@ public class VRSceneUI : MonoBehaviour
 
     public void UpdateResultUI()
     {
-        ResultTimer.text = "测试用时:" + GamePlayerManager.Instance.Timer.ToString()+"秒";
-        TrafficlightCount.text = "闯红灯次数:" + GamePlayerManager.Instance.SignalCount.ToString()+"次";
-        WroingCount.text = "错误路线次数:" + GamePlayerManager.Instance.WrongCount.ToString()+"次";
+        ResultTimer.text = GameExtension.GetCurrentCultureValue("ResultTime") + GamePlayerManager.Instance.Timer.ToString() + GameExtension.GetCurrentCultureValue("Second");
+        TrafficlightCount.text = GameExtension.GetCurrentCultureValue("TrafficlightCount") + GamePlayerManager.Instance.SignalCount.ToString();
+        WrongCount.text = GameExtension.GetCurrentCultureValue("WrongCount") + GamePlayerManager.Instance.WrongCount.ToString();
+        MathCount.text = GameExtension.GetCurrentCultureValue("MathCount") + GamePlayerManager.Instance.MathCount.ToString();
+        MathCorrectCount.text = GameExtension.GetCurrentCultureValue("MathCorrectCount") + GamePlayerManager.Instance.MathCorrectCount.ToString();
     }
 
     public void OnTestDisable()

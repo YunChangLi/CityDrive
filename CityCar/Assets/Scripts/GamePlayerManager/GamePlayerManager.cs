@@ -35,6 +35,14 @@ public class GamePlayerManager : MonoSingleton<GamePlayerManager>, IGameManager
     /// 错误路线此使
     /// </summary>
     public int WrongCount { get; set; }
+    /// <summary>
+    /// 總數學題數
+    /// </summary>
+    public int MathCount { get; set; }
+    /// <summary>
+    /// 答對數學題數
+    /// </summary>
+    public int MathCorrectCount { get; set; }
 
     public PlayerGameDataOut PlayerGameDataOut {get;set;}
 
@@ -85,6 +93,8 @@ public class GamePlayerManager : MonoSingleton<GamePlayerManager>, IGameManager
         Timer = 0;
         SignalCount = 0;
         WrongCount = 0;
+        MathCount = 0;
+        MathCorrectCount = 0;
         Player = null;
         PathFindTest = null;
         MapCreater = null;

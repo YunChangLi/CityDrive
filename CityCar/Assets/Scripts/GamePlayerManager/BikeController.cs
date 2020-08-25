@@ -159,10 +159,11 @@ public class BikeController : MonoBehaviour
     private void UpdateNormal()
     {
         if (!IsFadeOut || !GameTaskManager.Instance.GetComponent<GameStartMode>().isStart) { return; }
-        float speed = Mathf.Abs(Controller.BikeSpeed());
+        //float speed = Mathf.Abs(Controller.BikeSpeed());
+        float speed = Mathf.Abs(Controller.InputSpeed);
         speed = speed > MaxSpeed ? MaxSpeed : speed;
         Vector3 velocity = transform.forward * speed * Time.deltaTime;
-        Debug.Log(speed);
+        //Debug.Log(speed);
         // Update camera position
         Controller.Neck().transform.position = transform.position + Vector3.up * 0.85f;
         if (Controller.HeadLean >= 0.1f)
