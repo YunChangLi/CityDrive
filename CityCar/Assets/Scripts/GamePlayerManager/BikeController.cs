@@ -14,14 +14,19 @@ public class BikeController : MonoBehaviour
 
     private string BuildDate;
 
-    private float yVal = 0;
+    private float yVal = 90;
 
     const string kReleaseText = "By continuing use of VZfit you agree to the License Agreement at virzoom.com/eula.htm";
+
+    public bool IsFadeOut = false;
 
     // Start is called before the first frame update
     void Start()
     {
         BuildDate = DateTime.UtcNow.ToString();
+        VZPlugin.ResetSpeed(MaxSpeed);
+        Controller.Restart();
+        Controller.kControllerMaxSpeed = MaxSpeed;
     }
 
     // Update is called once per frame
@@ -146,11 +151,12 @@ public class BikeController : MonoBehaviour
         // Deactivate and reset alpha
         Controller.TransitionCanvas().SetActive(false);
         group.alpha = 1.0f;
+        IsFadeOut = true;
     }
 
     private void UpdateNormal()
     {
-        Vector3 velocity = transform.forward * Controller.InputSpeed * Time.deltaTime;
+        Vector3 velocity = transform.forward * Mathf.Abs(Controller.InputSpeed) * Time.deltaTime;
         // Update camera position
         Controller.Neck().transform.position = transform.position + Vector3.up * 0.85f;
         if (Controller.HeadLean >= 0.23f)

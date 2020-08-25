@@ -18,7 +18,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 
     public IEnumerator StartGameLogic(Func<bool> Input)
     {
-        yield return new WaitUntil(() => FindObjectOfType<VZPlayer>().IsFadeOut);
+        yield return new WaitUntil(() => FindObjectOfType<BikeController>().IsFadeOut);
         //关闭汽车组件
         //GamePlayerManager.Instance.PlayerColliderObject.rCC.enabled = false;
 

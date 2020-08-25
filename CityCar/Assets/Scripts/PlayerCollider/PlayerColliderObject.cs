@@ -228,6 +228,7 @@ public class PlayerColliderObject : MonoBehaviour
         MainCamera.cullingMask = (1 << 1);
         Rigidbody.isKinematic = true; //速度归零
         this.gameObject.transform.position = StartPos;
+        this.gameObject.transform.Rotate(0, 90, 0);
         Debug.Log(StartPos);
         this.gameObject.transform.rotation = Startquaternion;
         //相机正常

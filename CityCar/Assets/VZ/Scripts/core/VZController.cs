@@ -1384,7 +1384,7 @@ public class VZController : MonoBehaviour
    const float kSpeedHoldPeriod = 0.321f;
    const float kSpeedXboneFactor = 23.5f/25f; // xbone controller trigger is a little harder to press
    const float kCountsPerRev = 2f; // compared to 8 for bike magnets
-   const float kControllerMaxSpeed = 12.0f;
+   public float kControllerMaxSpeed = 12.0f;
    const float kHeadDead = 0.02f;
    const float kHeadWidth = 0.1f;
 
@@ -1558,7 +1558,7 @@ public class VZController : MonoBehaviour
    float ControllerSpeed()
    { 
       float axis = MakeAxis(mController.Reverse, mController.Forward, 1);
-      return axis * kControllerMaxSpeed;
+      return Mathf.Abs(axis * kControllerMaxSpeed);
    }
 
    // Turn opposing control inputs into single axis
