@@ -46,6 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VRSceneText: {fileID: 6698446843190064477}
   autoSpeech: {fileID: 0}
+  MathUI: {fileID: 0}
+  ResultUI: {fileID: 0}
+  ResultTimer: {fileID: 0}
+  TrafficlightCount: {fileID: 0}
+  WroingCount: {fileID: 0}
 --- !u!1 &6698446841957276298
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +177,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698446842966935417}
-  m_LocalRotation: {x: 0.048876777, y: -0.0068900874, z: 0.00033699532, w: 0.99878097}
+  m_LocalRotation: {x: 0.04887678, y: -0.006890088, z: 0.00033699535, w: 0.998781}
   m_LocalPosition: {x: -0.45099646, y: 1.18, z: 0.06300348}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

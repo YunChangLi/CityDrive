@@ -9,6 +9,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 
     private float startTime;
     private List<string> exp = new List<string>();
+    public bool isStart = false;
 
 
     public void EndLogic()
@@ -18,6 +19,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 
     public IEnumerator StartGameLogic(Func<bool> Input)
     {
+        isStart = false;
         yield return new WaitUntil(() => FindObjectOfType<BikeController>().IsFadeOut);
         //关闭汽车组件
         //GamePlayerManager.Instance.PlayerColliderObject.rCC.enabled = false;
@@ -29,6 +31,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
         yield return new WaitUntil(Input);
 
         //等待按键，让UI消失
+        isStart = true;
         GameUIManager.Instance.VRSceneUI.VRSceneText.text = "";
         GameUIManager.Instance.VRSceneUI.autoSpeech.StopTip();
         //开启汽车组件
@@ -44,7 +47,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
     public IEnumerator Math()
     {
         GameObject mathUI = GameUIManager.Instance.VRSceneUI.MathUI;
-        while (true)
+        while (!FindObjectOfType<PlayerColliderObject>().GetIsOver())
         {
             yield return new WaitForSeconds(GameDataManager.Instance.FlowData.Frequency);
             startTime = Time.time;
@@ -76,12 +79,12 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 
     public bool ChooseAnswer(int correct)
     {
-        if (FindObjectOfType<VZController>().RightButton.Released())
+        if (FindObjectOfType<VZController>().RightButton.Pressed())
         {
             Debug.Log(correct == 1? "Correct" : "Wrong");
             return true;
         }
-        else if (FindObjectOfType<VZController>().LeftButton.Released())
+        else if (FindObjectOfType<VZController>().LeftButton.Pressed())
         {
             Debug.Log(correct == 1 ? "Wrong" : "Correct");
             return true;

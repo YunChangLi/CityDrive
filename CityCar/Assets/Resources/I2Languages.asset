@@ -125,6 +125,15 @@ MonoBehaviour:
       - TimeLimit
       Flags: 000000
       Languages_Touch: []
+    - Term: Gas Station Level 1
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u52A0\u6CB9\u7AD9\u96BE\u5EA61"
+      - "\u52A0\u6CB9\u7AD9\u96E3\u5EA61"
+      - gas station level1
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

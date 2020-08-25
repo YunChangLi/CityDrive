@@ -10,15 +10,17 @@ public class BikeController : MonoBehaviour
 
     public float MaxSpeed;
 
+    public float yVal { get; set; } = 90;
+
+    public bool IsFadeOut = false;
+
     private Vector3 initDir;
 
     private string BuildDate;
 
-    private float yVal = 90;
-
     const string kReleaseText = "By continuing use of VZfit you agree to the License Agreement at virzoom.com/eula.htm";
 
-    public bool IsFadeOut = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -118,7 +120,7 @@ public class BikeController : MonoBehaviour
         // Hold both buttons to calibrate
         bool pressed = Controller.RightButton.Released();
 
-        if (pressed && Controller.IsHeadTracked())
+        if (pressed && Controller.IsHeadTracked() && !IsFadeOut)
         {
             Controller.LeftButton.Clear();
             Controller.RightButton.Clear();
@@ -128,6 +130,7 @@ public class BikeController : MonoBehaviour
 
             Controller.Recenter();
             Controller.Restart();
+            
             VZPlugin.ResetMotion();
             StartCoroutine(FadeDown(1));
         }
@@ -139,7 +142,7 @@ public class BikeController : MonoBehaviour
         CanvasGroup group = Controller.TransitionCanvas().GetComponent<CanvasGroup>();
         float time = 0;
         float startAlpha = group.alpha;
-
+        IsFadeOut = true;
         while (time < fadeTime)
         {
             time += VZTime.deltaTime > 0.0f ? VZTime.deltaTime : (1.0f / 60.0f);
@@ -151,19 +154,22 @@ public class BikeController : MonoBehaviour
         // Deactivate and reset alpha
         Controller.TransitionCanvas().SetActive(false);
         group.alpha = 1.0f;
-        IsFadeOut = true;
     }
 
     private void UpdateNormal()
     {
-        Vector3 velocity = transform.forward * Mathf.Abs(Controller.InputSpeed) * Time.deltaTime;
+        if (!IsFadeOut || !GameTaskManager.Instance.GetComponent<GameStartMode>().isStart) { return; }
+        float speed = Mathf.Abs(Controller.BikeSpeed());
+        speed = speed > MaxSpeed ? MaxSpeed : speed;
+        Vector3 velocity = transform.forward * speed * Time.deltaTime;
+        Debug.Log(speed);
         // Update camera position
         Controller.Neck().transform.position = transform.position + Vector3.up * 0.85f;
-        if (Controller.HeadLean >= 0.23f)
+        if (Controller.HeadLean >= 0.1f)
         {
             yVal = yVal - 20 * Time.deltaTime;
         }
-        else if (Controller.HeadLean <= -0.23f)
+        else if (Controller.HeadLean <= -0.1f)
         {
             yVal = yVal + 20 * Time.deltaTime;    
         }

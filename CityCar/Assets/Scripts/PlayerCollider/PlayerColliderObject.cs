@@ -70,7 +70,7 @@ public class PlayerColliderObject : MonoBehaviour
     {
        
         StartPos = this.gameObject.transform.position;
-        Startquaternion = this.transform.rotation;
+        Startquaternion = Quaternion.Euler(new Vector3(0, 90, 0)); 
         rCC = this.gameObject.GetComponent<RCC_CarControllerV3>();
         Rigidbody = this.gameObject.GetComponent<Rigidbody>();
 
@@ -228,7 +228,8 @@ public class PlayerColliderObject : MonoBehaviour
         MainCamera.cullingMask = (1 << 1);
         Rigidbody.isKinematic = true; //速度归零
         this.gameObject.transform.position = StartPos;
-        this.gameObject.transform.Rotate(0, 90, 0);
+        this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        GetComponent<BikeController>().yVal = 90;
         Debug.Log(StartPos);
         this.gameObject.transform.rotation = Startquaternion;
         //相机正常
@@ -274,7 +275,10 @@ public class PlayerColliderObject : MonoBehaviour
         yield return new WaitForSeconds(2);
         GamePlayerManager.Instance.PlayerGameDataOut.ResultDataOut();
     }
-
+    public bool GetIsOver() 
+    {
+        return isOver;
+    }
 
     public void OnDisableCollider()
     {
