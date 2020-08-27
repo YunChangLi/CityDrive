@@ -9,8 +9,6 @@ public class SteeringAnimController : MonoBehaviour
     [SerializeField]
     private GameObject _codeTable;
     [SerializeField]
-    private RCC_CarControllerV3 rCC;
-    [SerializeField]
     private GameObject _rpm;
 
     
@@ -18,8 +16,6 @@ public class SteeringAnimController : MonoBehaviour
     private void Update()
     {
         GetStreeringRot(Input.GetAxis("Horizontal")) ;
-        GetCodeTableRot(rCC.speed);
-        GetRpmRot(rCC.engineRPM);
     }
 
     public void GetStreeringRot(float Rot)

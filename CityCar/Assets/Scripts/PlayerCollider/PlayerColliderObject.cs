@@ -31,7 +31,6 @@ public class PlayerColliderObject : MonoBehaviour
     /// </summary>
     public PathFindTest path { get; set; }
 
-    public RCC_CarControllerV3 rCC { get; set; }
     public Rigidbody Rigidbody { get; set; }
 
     /// <summary>
@@ -71,7 +70,6 @@ public class PlayerColliderObject : MonoBehaviour
        
         StartPos = this.gameObject.transform.position;
         Startquaternion = Quaternion.Euler(new Vector3(0, 90, 0)); 
-        rCC = this.gameObject.GetComponent<RCC_CarControllerV3>();
         Rigidbody = this.gameObject.GetComponent<Rigidbody>();
 
     }
