@@ -64,7 +64,12 @@ public class GameFlowData
 
     public MathDifficulty Difficulty { get; set; }
 
-    public GameFlowData(DriveEnd driveEnd, DriveLevel driveLevel, RemindType remindType, Language language, string ID, LineData.Data data, float frequency, float timeLimit, MathDifficulty difficulty)
+    public float RotateSpeed { get; set; }
+
+    public float MaxSpeed { get; set; }
+
+    public GameFlowData(DriveEnd driveEnd, DriveLevel driveLevel, RemindType remindType, Language language, string ID, LineData.Data data, 
+        float frequency, float timeLimit, MathDifficulty difficulty, float rotateSpeed, float maxSpeed)
     {
         DriveLevel = driveLevel;
         DriveEnd = driveEnd;
@@ -75,5 +80,7 @@ public class GameFlowData
         Frequency = frequency;
         TimeLimit = timeLimit;
         Difficulty = difficulty;
+        RotateSpeed = rotateSpeed;
+        MaxSpeed = maxSpeed;
     }
 }

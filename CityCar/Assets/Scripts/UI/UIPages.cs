@@ -10,5 +10,6 @@ public class UIPages
         LoginPage,
         RoutePage,
         HintPage,
-        MathSettingPage;
+        MathSettingPage,
+        BikeSettingPage;
 }

@@ -20,7 +20,7 @@ public class MathSettingPage : BasePage, ILanguageTranslate
         FrequencyField.GetComponentInChildren<Text>().text = GameExtension.GetCurrentCultureValue("Frequency");
         TimeLimitField.GetComponentInChildren<Text>().text = GameExtension.GetCurrentCultureValue("TimeLimit");
 
-        NextButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.HintPage)));
+        NextButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.BikeSettingPage)));
         BackButton.onClick.AddListener((() => GoPage(GameUIManager.Instance.MainUi.UiPages.RoutePage)));
 
         easy = GameExtension.GetCurrentCultureValue("Easy");
