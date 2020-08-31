@@ -61,7 +61,7 @@ public class BikeController : MonoBehaviour
 #if UNITY_ANDROID
          release.text += "CHECKING PERMISSIONS";
 #else
-            release.text += "PLUG IN DONGLE";
+            release.text += "請插入藍芽接收器";
 #endif
             Controller.ConnectBike(true, true, true);
         }
@@ -81,7 +81,7 @@ public class BikeController : MonoBehaviour
             }
             else
             {
-                release.text += "TURN ON BIKE AND PEDAL FORWARD";
+                release.text += "請試踩踏板";
             }
         }
         else if (!Controller.IsBikeLicensed())
@@ -98,14 +98,14 @@ public class BikeController : MonoBehaviour
         }
         else
         {
-            release.text += "PRESS R TO BEGIN";
+            release.text += "按下A鍵開始遊戲";
         }
 
 #if UNITY_EDITOR
         if (!Controller.IsBikeConnected())
         {
             if (Controller.ControllerName() == "Keyboard")
-                release.text += "\n\n(or press enter to play without bike)";
+                release.text += "\n\n(或按下Enter開始進行模擬)";
             else if (Controller.IsCardboard())
                 release.text += "\n\n(or press button to play without bike)";
             else if (Controller.ControllerName() == "GearVR")
