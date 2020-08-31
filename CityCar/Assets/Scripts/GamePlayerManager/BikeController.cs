@@ -8,8 +8,6 @@ public class BikeController : MonoBehaviour
 {
     public VZController Controller;
 
-    public float MaxSpeed;
-
     public float yVal { get; set; } = 90;
 
     public bool IsFadeOut = false;
@@ -18,6 +16,10 @@ public class BikeController : MonoBehaviour
 
     private string BuildDate;
 
+    private float rotateSpeed = 20;
+
+    private float maxSpeed = 3;
+
     const string kReleaseText = "By continuing use of VZfit you agree to the License Agreement at virzoom.com/eula.htm";
 
 
@@ -25,10 +27,12 @@ public class BikeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxSpeed = GameDataManager.Instance.FlowData.MaxSpeed;
+        rotateSpeed = GameDataManager.Instance.FlowData.RotateSpeed;
         BuildDate = DateTime.UtcNow.ToString();
-        VZPlugin.ResetSpeed(MaxSpeed);
-        Controller.Restart();
-        Controller.kControllerMaxSpeed = MaxSpeed;
+        //VZPlugin.ResetSpeed(maxSpeed);
+        //Controller.Restart();
+        //Controller.kControllerMaxSpeed = maxSpeed;
     }
 
     // Update is called once per frame
@@ -161,18 +165,18 @@ public class BikeController : MonoBehaviour
         if (!IsFadeOut || !GameTaskManager.Instance.GetComponent<GameStartMode>().isStart) { return; }
         //float speed = Mathf.Abs(Controller.BikeSpeed());
         float speed = Mathf.Abs(Controller.InputSpeed);
-        speed = speed > MaxSpeed ? MaxSpeed : speed;
+        speed = speed > maxSpeed ? maxSpeed : speed;
         Vector3 velocity = transform.forward * speed * Time.deltaTime;
         //Debug.Log(speed);
         // Update camera position
         Controller.Neck().transform.position = transform.position + Vector3.up * 0.85f;
         if (Controller.HeadLean >= 0.1f)
         {
-            yVal = yVal - 20 * Time.deltaTime;
+            yVal = yVal - rotateSpeed * Time.deltaTime;
         }
         else if (Controller.HeadLean <= -0.1f)
         {
-            yVal = yVal + 20 * Time.deltaTime;    
+            yVal = yVal + rotateSpeed * Time.deltaTime;    
         }
 
         transform.eulerAngles = new Vector3(0, yVal, 0);

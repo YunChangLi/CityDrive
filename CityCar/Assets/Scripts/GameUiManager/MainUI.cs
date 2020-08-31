@@ -23,6 +23,10 @@ public class MainUI : MonoBehaviour
 
     public MathDifficulty Difficulty { get; set; }
 
+    public float RotateSpeed { get; set; }
+
+    public float MaxSpeed { get; set; }
+
     public LineData.Data RouteNode { get; set; }
 
     public UIPages UiPages;
@@ -59,7 +63,7 @@ public class MainUI : MonoBehaviour
     private GameFlowData GetData()
     {
         //UI_DriveLevel = GameUIManager.Instance.MainUi.UI_DriveLevel = (DriveLevel)int.Parse(GameUIManager.Instance.MainUi.RouteDatas[i].Difficult);
-        return new GameFlowData(UI_DriveEnd, UI_DriveLevel, UI_RemindType, UI_Language, UI_UserID,RouteNode, Frequency, TimeLimit, Difficulty);
+        return new GameFlowData(UI_DriveEnd, UI_DriveLevel, UI_RemindType, UI_Language, UI_UserID,RouteNode, Frequency, TimeLimit, Difficulty, RotateSpeed, MaxSpeed);
     }
 
     private void MainUiDispose()
