@@ -297,6 +297,33 @@ MonoBehaviour:
       - Second
       Flags: 000000
       Languages_Touch: []
+    - Term: ResultTitle
+      TermType: 0
+      Description: 
+      Languages:
+      - "\r\u6D4B\u8BD5\u7ED3\u675F"
+      - "\u6E2C\u8A66\u7D50\u675F"
+      - Test Finish
+      Flags: 000000
+      Languages_Touch: []
+    - Term: RotateSpeed
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u65CB\u8F6C\u901F\u5EA6"
+      - "\u65CB\u8F49\u901F\u5EA6"
+      - RotateSpeed
+      Flags: 000000
+      Languages_Touch: []
+    - Term: MaxSpeed
+      TermType: 0
+      Description: 
+      Languages:
+      - "\r\u6700\u5927\u79FB\u52A8\u901F\u5EA6"
+      - "\u6700\u5927\u79FB\u52D5\u901F\u5EA6"
+      - MaxSpeed
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

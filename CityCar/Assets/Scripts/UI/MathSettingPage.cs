@@ -35,8 +35,8 @@ public class MathSettingPage : BasePage, ILanguageTranslate
 
     public override void GoPage(BasePage page)
     {
-        GameUIManager.Instance.MainUi.Frequency = int.Parse(FrequencyField.text);
-        GameUIManager.Instance.MainUi.TimeLimit = int.Parse(TimeLimitField.text);
+        GameUIManager.Instance.MainUi.Frequency = int.Parse(string.IsNullOrEmpty(FrequencyField.text) ? "10" : FrequencyField.text);
+        GameUIManager.Instance.MainUi.TimeLimit = int.Parse(string.IsNullOrEmpty(TimeLimitField.text) ? "10" : TimeLimitField.text);
 
         if(DifficultyDropdown.captionText.text.ToString() == easy)
         {

@@ -115,6 +115,12 @@ public class BikeController : MonoBehaviour
             else
                 release.text += "\n\n(or press R1 to play without bike)";
         }
+#else
+        if (!Controller.IsBikeConnected())
+        {
+            if (Controller.ControllerName() == "Keyboard")
+                release.text += "\n\n(或按下Enter開始進行模擬)";
+        }
 #endif
 
         // Switch to VZButton

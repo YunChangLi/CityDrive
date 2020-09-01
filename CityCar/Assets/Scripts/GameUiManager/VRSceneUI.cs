@@ -20,6 +20,7 @@ public class VRSceneUI : MonoBehaviour
     /// </summary>
     public GameObject ResultUI;
 
+    public Text ResultTitle;
     public Text ResultTimer;
     public Text TrafficlightCount;
     public Text WrongCount;
@@ -74,6 +75,7 @@ public class VRSceneUI : MonoBehaviour
 
     public void UpdateResultUI()
     {
+        ResultTitle.text = GameExtension.GetCurrentCultureValue("ResultTitle");
         ResultTimer.text = GameExtension.GetCurrentCultureValue("ResultTime") + GamePlayerManager.Instance.Timer.ToString() + GameExtension.GetCurrentCultureValue("Second");
         TrafficlightCount.text = GameExtension.GetCurrentCultureValue("TrafficlightCount") + GamePlayerManager.Instance.SignalCount.ToString();
         WrongCount.text = GameExtension.GetCurrentCultureValue("WrongCount") + GamePlayerManager.Instance.WrongCount.ToString();
