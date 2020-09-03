@@ -12,7 +12,7 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
     public bool isStart = false;
 
     private IEnumerator MathCoroutine;
-
+    private AudioSource source;
 
     public void EndLogic()
     {
@@ -21,6 +21,8 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
 
     public IEnumerator StartGameLogic(Func<bool> Input)
     {
+        source = GamePlayerManager.Instance.Player.GetComponentInChildren<AudioSource>();
+
         isStart = false;
         yield return new WaitUntil(() => FindObjectOfType<BikeController>().IsFadeOut);
         //关闭汽车组件
@@ -106,25 +108,31 @@ public class GameStartMode : MonoBehaviour, IPlayerStartTest
             if(correct == 1)
             {
                 GamePlayerManager.Instance.MathCorrectCount++;
-                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+                //StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+                source.clip = GameSceneManager.Instance.GameSceneResources.CorrectSound;
             }
             else
             {
-                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+                //StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+                source.clip = GameSceneManager.Instance.GameSceneResources.WrongSound;
             }
+            source.Play();
             return true;
         }
         else if (FindObjectOfType<VZController>().LeftButton.Pressed())
         {
             if (correct == 1)
             {
-                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+                //StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.WrongImage));
+                source.clip = GameSceneManager.Instance.GameSceneResources.WrongSound;
             }
             else
             {
                 GamePlayerManager.Instance.MathCorrectCount++;
-                StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+                //StartCoroutine(FadeDown(2, GameUIManager.Instance.VRSceneUI.CorrectImage));
+                source.clip = GameSceneManager.Instance.GameSceneResources.CorrectSound;
             }
+            source.Play();
             return true;
         }
         return false;
